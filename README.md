@@ -5,5 +5,4 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 (https://github.com/BrandonSundell/TrainersDelight/blob/main/TrainersDelightDatabaseSchema.sql)
 
 ## DataBase ERD
-!()
-!()
+()
