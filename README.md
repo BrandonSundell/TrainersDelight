@@ -6,3 +6,6 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 
 ## DataBase ERD
 (https://github.com/BrandonSundell/TrainersDelight/blob/main/TrainersDelightWireframe.pdf)
+
+## Requirements & Use Case
+()
