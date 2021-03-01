@@ -14,8 +14,7 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 
 [Top](#trainersdelight)
 
-## Requirements & Use Case
-(https://github.com/BrandonSundell/TrainersDelight/tree/main/Requirements)
+## [Requirements & Use Case](https://github.com/BrandonSundell/TrainersDelight/tree/main/Requirements)
 
 [Top](#trainersdelight)
 
