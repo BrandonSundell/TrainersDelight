@@ -14,7 +14,7 @@ client meet their health goals
 4. Given the trainer needs to update client progress the trainer can log in and update the clients information and new found goals.
 
 # UML
-![](Requirements/UMLDiagram.jpg)
+![UML Diagram](Requirements/UMLDiagram.jpg)
 
 # Requirement List
 The system shall 
