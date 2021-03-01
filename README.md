@@ -4,19 +4,13 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 ### Table of Contents
 
 1. [DataBase Schema](#database-schema)
-2. [DataBase ERD](#database-erd)
-3. [Requirments](#Requirments)
-4. [WireFrame](#wireframe-diagram)
-5. [Testing](#testing)
-6. [Core Code](#core-code)
+2. [Requirments](#Requirments)
+3. [WireFrame](#wireframe-diagram)
+4. [Testing](#testing)
+5. [Core Code](#core-code)
 
 ## DataBase Schema
 (https://github.com/BrandonSundell/TrainersDelight/blob/main/TrainersDelightDatabaseSchema.sql)
-
-[Top](#trainersdelight)
-
-## DataBase ERD
-(https://github.com/BrandonSundell/TrainersDelight/blob/main/TrainersDelightWireframe.pdf)
 
 [Top](#trainersdelight)
 
