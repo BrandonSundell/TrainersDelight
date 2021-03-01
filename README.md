@@ -4,7 +4,7 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 ### Table of Contents
 
 1. [DataBase Schema](#database-schema)
-2. [Requirments](#Requirments)
+2. [Requirements](#Requirments)
 3. [WireFrame](#wireframe-diagram)
 4. [Testing](#testing)
 5. [Core Code](#core-code)
