@@ -17,7 +17,7 @@ client meet their health goals
 ![](main/Requirements/UMLDiagram.jpg)
 
 # Requirement List
-## The system shall 
+The system shall 
 1.  Authenticate trainer profile.
 2.  Provide the trainer the ability to create new clients.
 3.  Allow the trainer to input client information.
