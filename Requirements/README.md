@@ -28,3 +28,5 @@ The system shall
 8.  Provide a calendar to the trainer to track appointment dates and times.
 9.  Allow for trainers to share client data in the case of leave or time off.
 10.  Allow the client to veiw their own progress.
+
+![HOME](https://github.com/BrandonSundell/TrainersDelight/)
