@@ -21,7 +21,31 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 
 [Top](#trainersdelight)
 
-## Testing
+## Test Plan
+
+### Requirement Table
+
+|ReqId|Requirement|Test Method|
+|-----|-----------|-----------|
+|1| | | 
+|2| | | 
+|3| | | 
+|4| | | 
+|5| | | 
+|6| | | 
+|7| | | 
+|8| | |
+|9| | | 
+|10| | | 
+
+### Test table
+|testId|ReqID|Test proc|current state|Time|
+|------|-----|---------|-------------|----|
+|1| | | | |
+|2| | | | |
+|3| | | | |
+|4| | | | |
+
 
 [Top](#trainersdelight)
 
