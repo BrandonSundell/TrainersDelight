@@ -39,7 +39,7 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 |10|Allow the client to veiw their own progress|Acceptance| 
 
 ### Test table
-|testId|ReqID|Test proc|current state|Time|
+|testId|ReqID|Test process|current state|Time|
 |------|-----|---------|-------------|----|
 |1|1,10|From the main login page enter user cridentials(username, password) should allow the user to access the application|Not Tested|N/A|
 |2|2,3,4,6,8|In the application the user should be able to click the tabs on the left hand side and be able to interact and insert the data needed into that section of the app|Not Tested|N/A|
