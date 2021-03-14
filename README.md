@@ -51,4 +51,7 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 
 ## Core Code
 
+### Prototype
+![](https://github.com/BrandonSundell/TrainersDelight/blob/main/WebPage%20Prototype/TrainersDelightTrainerHomePage.png)
+
 [Top](#trainersdelight)
