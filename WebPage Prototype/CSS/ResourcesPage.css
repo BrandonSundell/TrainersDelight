@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(60px, 100px) 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "AppNav MainContent MainContent"
+      "AppNav MainContent MainContent"
+      "AppNav MainContent MainContent";
+  }
+  
+  .AppNav { grid-area: AppNav; }
+
+  .MainContent { grid-area: MainContent; }
