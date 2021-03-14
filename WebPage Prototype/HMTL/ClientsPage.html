@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=crome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ClientsPage.css" media="screen" />
+    <title>Clients</title>
+</head>
+
+<body>
+    <div class="Container">
+
+        <div class="NavBar">
+            <a href="">Clients</a>
+            <a href="">Calendar</a>
+            <a href="">Tools</a>
+            <a href="">Workouts</a>
+            <a href="">Resources</a>
+        </div>
+
+        <div class="ProfileBox">
+            <div class="one">
+                <img src="https://source.unsplash.com/random" alt="Profile Pic">
+            </div>
+
+            <div id="two">
+                <h3>@User.FirstName + @User.LastName</h3>
+                <h5>@User.PhoneNumber</h5>
+                <h5><a href="">@User.Email</a></h5>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta autem illum commodi numquam ea,
+                    itaque voluptate eaque nobis eos dolores ipsum totam dolor placeat soluta, repellendus sapiente
+                    quasi ipsa iure!
+                </p>
+            </div>
+        </div>
+
+        <div class="AddClientButton">
+            <div><a href=""><img src="/Images/add-user.png" alt="AddUserImage" height="30px" width="30px"></a></div>
+        </div>
+
+        <div class="MainContent">
+
+            <div class="ProfileContainer">
+                <div class="ClientProfilePic">
+                    <img src="https://source.unsplash.com/random" alt="Client Pic">
+                </div>
+                <div class="ClientName">
+                    <h3>@Client.FirstName + @Client.LastName</h3>
+                </div>
+            </div>
+
+            <div class="ProfileContainer">
+                <div class="ClientProfilePic">
+                    <img src="https://source.unsplash.com/random" alt="Client Pic">
+                </div>
+                <div class="ClientName">
+                    <h3>@Client.FirstName + @Client.LastName</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
