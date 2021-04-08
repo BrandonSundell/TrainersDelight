@@ -28,10 +28,10 @@ namespace TrainersDelight.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
-        public int Phone { get; set; }
+        
+        public string Phone { get; set; }
 
-        [DataType(DataType.Date)]
+
         public DateTime DateOfBirth { get; set; }
     }
 }
