@@ -65,10 +65,10 @@ This is the prototype of the Home Page I made using HTML and CSS in Visual Studi
 
 Migration and DataBase implementation along with scaffolded CRUD operations using the MVC model.
 
-![]()
-![]()
-![]()
-![]()
-![]()
+![](Images/SQLInsertedData.jpg)
+![](Images/ProjectGetDataFromDB.jpg)
+![](Images/RunningAppPulledData.jpg)
+![](Images/RunningAppCreate.jpg)
+![](Images/RunningAppEdit.jpg)
 
 [Top](#trainersdelight)
