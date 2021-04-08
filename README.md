@@ -55,8 +55,20 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 ## Core Code
 
 ### Prototype
-![](https://github.com/BrandonSundell/TrainersDelight/blob/main/WebPage%20Prototype/TrainersDelightTrainerHomePage.png)
 
 [Link to code files from Visual Studio](https://github.com/BrandonSundell/TrainersDelight/tree/master/TrainersDelight)
+
+This is the prototype of the Home Page I made using HTML and CSS in Visual Studio Code to gudie the rest of my UI and front end development.
+![](https://github.com/BrandonSundell/TrainersDelight/blob/main/WebPage%20Prototype/TrainersDelightTrainerHomePage.png)
+
+### Project Progress
+
+Migration and DataBase implementation along with scaffolded CRUD operations using the MVC model.
+
+![](Images/SQL Inserted Data.jpg)
+![](Images/Project Get Data From DB.jpg)
+![](Images/RunningApp Pulled Data.jpg)
+![]()
+![]()
 
 [Top](#trainersdelight)
