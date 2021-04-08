@@ -10,6 +10,9 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 5. [Core Code](#core-code)
 
 ## [DataBase Schema](https://github.com/BrandonSundell/TrainersDelight/blob/main/TrainersDelightDatabaseSchema.sql)
+![](Images/DB Schema1.JPG)
+![](Images/DB Schema2.JPG)
+
 [Top](#trainersdelight)
 
 ## [Requirements & Use Case](https://github.com/BrandonSundell/TrainersDelight/tree/main/Requirements)
