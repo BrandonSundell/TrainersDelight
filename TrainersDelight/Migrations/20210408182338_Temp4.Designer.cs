@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrainersDelight.Data;
 
 namespace TrainersDelight.Migrations
 {
     [DbContext(typeof(TrainersDelightContext))]
-    partial class TrainersDelightContextModelSnapshot : ModelSnapshot
+    [Migration("20210408182338_Temp4")]
+    partial class Temp4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
