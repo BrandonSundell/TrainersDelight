@@ -4,12 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Data;
 using TrainersDelight.Models;
 
 namespace TrainersDelight.Controllers
 {
+    [Authorize]
     public class ClientsController : Controller
     {
         private readonly TrainersDelightContext _context;
@@ -51,7 +55,6 @@ namespace TrainersDelight.Controllers
 
         // POST: Clients/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
@@ -83,7 +86,6 @@ namespace TrainersDelight.Controllers
 
         // POST: Clients/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)

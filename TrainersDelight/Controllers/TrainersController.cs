@@ -4,12 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Data;
 using TrainersDelight.Models;
 
 namespace TrainersDelight.Controllers
 {
+    [Authorize]
     public class TrainersController : Controller
     {
         private readonly TrainersDelightContext _context;
