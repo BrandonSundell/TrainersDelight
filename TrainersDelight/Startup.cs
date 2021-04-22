@@ -1,19 +1,18 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrainersDelight.Data;
-using Microsoft.AspNetCore.Authorization;
 
 namespace TrainersDelight
 {
@@ -29,10 +28,6 @@ namespace TrainersDelight
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-
-
             //Thanks JR!
             services.AddAuthorization(options =>
             {
@@ -43,9 +38,10 @@ namespace TrainersDelight
 
             services.AddDbContext<TrainersDelightContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TrainersDelightContext")));
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
-            //services.AddDbContext<TrainersDelightAuthentication>(opt =>
-            //    opt.UseSqlServer(Configuration.GetConnectionString("TrainersDelightAuthenticationConnection")));
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +54,7 @@ namespace TrainersDelight
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                //app.UseHsts();
+                app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
