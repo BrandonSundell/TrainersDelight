@@ -28,16 +28,15 @@ namespace TrainersDelight
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Thanks JR!
-            services.AddAuthorization(options =>
-            {
-                options.FallbackPolicy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser()
-                    .Build();
-            });
 
             services.AddDbContext<TrainersDelightContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TrainersDelightContext")));
+
+            services.AddDefaultIdentity<IdentityUser>(options =>
+                options.SignIn.RequireConfirmedAccount = true)
+                    .AddRoles<IdentityRole>()
+                    .AddEntityFrameworkStores<TrainersDelightContext>();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews();

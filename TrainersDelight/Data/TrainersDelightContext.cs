@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Models;
 
 namespace TrainersDelight.Data
 {
-    public class TrainersDelightContext : DbContext
+    public class TrainersDelightContext : IdentityDbContext
     {
         public TrainersDelightContext (DbContextOptions<TrainersDelightContext> options) : base(options)
         {

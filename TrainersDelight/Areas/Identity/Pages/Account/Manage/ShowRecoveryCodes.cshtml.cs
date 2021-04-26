@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using TrainersDelight.Areas.Identity.Data;
 
 namespace TrainersDelight.Areas.Identity.Pages.Account.Manage
 {
