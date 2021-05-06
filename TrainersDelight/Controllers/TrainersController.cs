@@ -13,7 +13,7 @@ using TrainersDelight.Models;
 
 namespace TrainersDelight.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class TrainersController : Controller
     {
         private readonly TrainersDelightContext _context;

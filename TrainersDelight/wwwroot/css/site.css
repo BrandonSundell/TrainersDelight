@@ -58,9 +58,19 @@ html {
   min-height: 100%;
 }
 
+.bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../Images/backgroundimage.jpg");
+    min-height: 100%;
+}
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: azure;
 }
 .footer {
   position: absolute;
