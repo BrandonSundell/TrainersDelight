@@ -23,7 +23,5 @@ namespace TrainersDelight.Data
         public DbSet<ClientGoals> ClientGoals { get; set; }
         public DbSet<TrainerNotes> TrainerNotes { get; set; }
         
-
-
     }
 }
