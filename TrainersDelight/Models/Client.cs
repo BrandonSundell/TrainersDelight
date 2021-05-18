@@ -12,8 +12,7 @@ namespace TrainersDelight.Models
         [Key]
         public int ClientId { get; set; }
 
-        [ForeignKey("TrainerID")]
-        public int TrainerId { get; set; }
+        public string TrainerId { get; set; }
 
         [MaxLength(20, ErrorMessage ="Name can only be 20 characters!")]
         public string FirstName { get; set; }

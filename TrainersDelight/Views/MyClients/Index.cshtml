@@ -3,9 +3,18 @@
     ViewData["Title"] = "My Clients";
 }
 
-<div class="m-4 align-content-right">
-    <a asp-action="Create">Create New</a>
+<div class="m-sm-auto align-content-right">
+    <a asp-controller="Clients" asp-action="Create">Create New</a>
 </div>
 <div>
-    <h2>This is where your client list will go</h2>
+    <h2>Your Clients</h2>
+    @{
+        foreach (var client in ViewBag.ClientList)
+        {
+            <div>
+                <h4><a asp-controller="MyClients" asp-action="ClientProfile" asp-route-id="@client.ClientId"> @client.FirstName @client.LastName </a></h4>
+            </div>
+        }
+    }
+
 </div>

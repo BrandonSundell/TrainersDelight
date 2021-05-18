@@ -4,34 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Data;
 using TrainersDelight.Models;
 
-namespace TrainersDelight.Controllers
+namespace TrainersDelight
 {
-    
-    public class ClientsController : Controller
+    public class ClientBFPsController : Controller
     {
         private readonly TrainersDelightContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
 
-        public ClientsController(TrainersDelightContext context, UserManager<IdentityUser> userManager)
+        public ClientBFPsController(TrainersDelightContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // GET: Clients
+        // GET: ClientBFPs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clients.ToListAsync());
+            return View(await _context.ClientBFPs.ToListAsync());
         }
 
-        // GET: Clients/Details/5
+        // GET: ClientBFPs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,39 +33,39 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientBFP = await _context.ClientBFPs
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientBFP == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientBFP);
         }
 
-        // GET: Clients/Create
-        public async Task<IActionResult> Create()
+        // GET: ClientBFPs/Create
+        public IActionResult Create()
         {
-            ViewBag.Trainers = await _userManager.Users.ToListAsync();
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: ClientBFPs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Create([Bind("ClientId,BFP,DateOfMessurment")] ClientBFP clientBFP)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
+                _context.Add(clientBFP);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientBFP);
         }
 
-        // GET: Clients/Edit/5
+        // GET: ClientBFPs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,21 +73,22 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients.FindAsync(id);
-            if (client == null)
+            var clientBFP = await _context.ClientBFPs.FindAsync(id);
+            if (clientBFP == null)
             {
                 return NotFound();
             }
-            return View(client);
+            return View(clientBFP);
         }
 
-        // POST: Clients/Edit/5
+        // POST: ClientBFPs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Edit(int id, [Bind("ClientId,BFP,DateOfMessurment")] ClientBFP clientBFP)
         {
-            if (id != client.ClientId)
+            if (id != clientBFP.ClientId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace TrainersDelight.Controllers
             {
                 try
                 {
-                    _context.Update(client);
+                    _context.Update(clientBFP);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.ClientId))
+                    if (!ClientBFPExists(clientBFP.ClientId))
                     {
                         return NotFound();
                     }
@@ -118,10 +113,10 @@ namespace TrainersDelight.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientBFP);
         }
 
-        // GET: Clients/Delete/5
+        // GET: ClientBFPs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,30 +124,30 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientBFP = await _context.ClientBFPs
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientBFP == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientBFP);
         }
 
-        // POST: Clients/Delete/5
+        // POST: ClientBFPs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var client = await _context.Clients.FindAsync(id);
-            _context.Clients.Remove(client);
+            var clientBFP = await _context.ClientBFPs.FindAsync(id);
+            _context.ClientBFPs.Remove(clientBFP);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientExists(int id)
+        private bool ClientBFPExists(int id)
         {
-            return _context.Clients.Any(e => e.ClientId == id);
+            return _context.ClientBFPs.Any(e => e.ClientId == id);
         }
     }
 }

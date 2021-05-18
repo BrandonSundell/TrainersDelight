@@ -4,34 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Data;
 using TrainersDelight.Models;
 
-namespace TrainersDelight.Controllers
+namespace TrainersDelight
 {
-    
-    public class ClientsController : Controller
+    public class ClientBMIsController : Controller
     {
         private readonly TrainersDelightContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
 
-        public ClientsController(TrainersDelightContext context, UserManager<IdentityUser> userManager)
+        public ClientBMIsController(TrainersDelightContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // GET: Clients
+        // GET: ClientBMIs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clients.ToListAsync());
+            return View(await _context.ClientBMIs.ToListAsync());
         }
 
-        // GET: Clients/Details/5
+        // GET: ClientBMIs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,39 +33,39 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientBMI = await _context.ClientBMIs
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientBMI == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientBMI);
         }
 
-        // GET: Clients/Create
-        public async Task<IActionResult> Create()
+        // GET: ClientBMIs/Create
+        public IActionResult Create()
         {
-            ViewBag.Trainers = await _userManager.Users.ToListAsync();
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: ClientBMIs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Create([Bind("ClientId,BMI,DateOfMessurment")] ClientBMI clientBMI)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
+                _context.Add(clientBMI);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientBMI);
         }
 
-        // GET: Clients/Edit/5
+        // GET: ClientBMIs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,21 +73,22 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients.FindAsync(id);
-            if (client == null)
+            var clientBMI = await _context.ClientBMIs.FindAsync(id);
+            if (clientBMI == null)
             {
                 return NotFound();
             }
-            return View(client);
+            return View(clientBMI);
         }
 
-        // POST: Clients/Edit/5
+        // POST: ClientBMIs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Edit(int id, [Bind("ClientId,BMI,DateOfMessurment")] ClientBMI clientBMI)
         {
-            if (id != client.ClientId)
+            if (id != clientBMI.ClientId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace TrainersDelight.Controllers
             {
                 try
                 {
-                    _context.Update(client);
+                    _context.Update(clientBMI);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.ClientId))
+                    if (!ClientBMIExists(clientBMI.ClientId))
                     {
                         return NotFound();
                     }
@@ -118,10 +113,10 @@ namespace TrainersDelight.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientBMI);
         }
 
-        // GET: Clients/Delete/5
+        // GET: ClientBMIs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,30 +124,30 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientBMI = await _context.ClientBMIs
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientBMI == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientBMI);
         }
 
-        // POST: Clients/Delete/5
+        // POST: ClientBMIs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var client = await _context.Clients.FindAsync(id);
-            _context.Clients.Remove(client);
+            var clientBMI = await _context.ClientBMIs.FindAsync(id);
+            _context.ClientBMIs.Remove(clientBMI);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientExists(int id)
+        private bool ClientBMIExists(int id)
         {
-            return _context.Clients.Any(e => e.ClientId == id);
+            return _context.ClientBMIs.Any(e => e.ClientId == id);
         }
     }
 }

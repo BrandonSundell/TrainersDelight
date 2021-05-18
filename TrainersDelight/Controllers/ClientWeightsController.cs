@@ -4,34 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TrainersDelight.Data;
 using TrainersDelight.Models;
 
-namespace TrainersDelight.Controllers
+namespace TrainersDelight
 {
-    
-    public class ClientsController : Controller
+    public class ClientWeightsController : Controller
     {
         private readonly TrainersDelightContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
 
-        public ClientsController(TrainersDelightContext context, UserManager<IdentityUser> userManager)
+        public ClientWeightsController(TrainersDelightContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // GET: Clients
+        // GET: ClientWeights
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clients.ToListAsync());
+            return View(await _context.ClientWeights.ToListAsync());
         }
 
-        // GET: Clients/Details/5
+        // GET: ClientWeights/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,39 +33,39 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientWeight = await _context.ClientWeights
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientWeight == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientWeight);
         }
 
-        // GET: Clients/Create
-        public async Task<IActionResult> Create()
+        // GET: ClientWeights/Create
+        public IActionResult Create()
         {
-            ViewBag.Trainers = await _userManager.Users.ToListAsync();
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: ClientWeights/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Create([Bind("ClientId,WeightInPounds,DateOfMessurment")] ClientWeight clientWeight)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
+                _context.Add(clientWeight);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientWeight);
         }
 
-        // GET: Clients/Edit/5
+        // GET: ClientWeights/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,21 +73,22 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients.FindAsync(id);
-            if (client == null)
+            var clientWeight = await _context.ClientWeights.FindAsync(id);
+            if (clientWeight == null)
             {
                 return NotFound();
             }
-            return View(client);
+            return View(clientWeight);
         }
 
-        // POST: Clients/Edit/5
+        // POST: ClientWeights/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClientId,TrainerId,FirstName,LastName,MiddleName,Height,Email,Phone,DateOfBirth")] Client client)
+        public async Task<IActionResult> Edit(int id, [Bind("ClientId,WeightInPounds,DateOfMessurment")] ClientWeight clientWeight)
         {
-            if (id != client.ClientId)
+            if (id != clientWeight.ClientId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace TrainersDelight.Controllers
             {
                 try
                 {
-                    _context.Update(client);
+                    _context.Update(clientWeight);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.ClientId))
+                    if (!ClientWeightExists(clientWeight.ClientId))
                     {
                         return NotFound();
                     }
@@ -118,10 +113,10 @@ namespace TrainersDelight.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(clientWeight);
         }
 
-        // GET: Clients/Delete/5
+        // GET: ClientWeights/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,30 +124,30 @@ namespace TrainersDelight.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var clientWeight = await _context.ClientWeights
                 .FirstOrDefaultAsync(m => m.ClientId == id);
-            if (client == null)
+            if (clientWeight == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(clientWeight);
         }
 
-        // POST: Clients/Delete/5
+        // POST: ClientWeights/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var client = await _context.Clients.FindAsync(id);
-            _context.Clients.Remove(client);
+            var clientWeight = await _context.ClientWeights.FindAsync(id);
+            _context.ClientWeights.Remove(clientWeight);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientExists(int id)
+        private bool ClientWeightExists(int id)
         {
-            return _context.Clients.Any(e => e.ClientId == id);
+            return _context.ClientWeights.Any(e => e.ClientId == id);
         }
     }
 }

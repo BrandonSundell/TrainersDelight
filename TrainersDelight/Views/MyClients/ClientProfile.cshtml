@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Client Profile";
+}
+@model TrainersDelight.Models.Client
+
+<div>
+    <h2>@Model.FirstName @Model.LastName</h2>
+
+    <div>
+        <h4>Client Goals</h4>
+        <p>@ViewBag.clientGoals.Goals</p>
+        <a asp-controller="ClientGoals" asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+        <a asp-controller="ClientGoals" asp-action="Details" asp-route-id="@Model.ClientId">Details</a> |
+        <a asp-controller="ClientGoals" asp-action="Delete" asp-route-id="@Model.ClientId">Delete</a> 
+    </div>
+    <div>
+        <h4>Weight(lbs)</h4>
+        <p>@ViewBag.clientWeight.WeightInPounds</p>
+        <a asp-controller="ClientWeights" asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+        <a asp-controller="ClientWeights" asp-action="Details" asp-route-id="@Model.ClientId">Details</a> |
+        <a asp-controller="ClientWeights" asp-action="Delete" asp-route-id="@Model.ClientId">Delete</a>
+    </div>
+    <div>
+        <h4>Body Mass Index(BMI)</h4>
+        <p>@ViewBag.clientBMI.BMI</p>
+        <a asp-controller="ClientBMIs" asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+        <a asp-controller="ClientBMIs" asp-action="Details" asp-route-id="@Model.ClientId">Details</a> |
+        <a asp-controller="ClientBMIs" asp-action="Delete" asp-route-id="@Model.ClientId">Delete</a>
+    </div>
+    <div>
+        <h4>Body Fat Percentage(BFP)</h4>
+        <p>@ViewBag.clientBFP.BFP</p>
+        <a asp-controller="ClientBFPs" asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+        <a asp-controller="ClientBFPs" asp-action="Details" asp-route-id="@Model.ClientId">Details</a> |
+        <a asp-controller="ClientBFPs" asp-action="Delete" asp-route-id="@Model.ClientId">Delete</a>
+    </div>
+    @*<div>
+        <h4>Trainer Notes</h4>
+    </div>*@
+</div>

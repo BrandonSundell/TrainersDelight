@@ -12,7 +12,6 @@ namespace TrainersDelight.Models
         [Key]
         public int ClientId { get; set; }
 
-
         public string Goals { get; set; }
 
         [DataType(DataType.DateTime)]
