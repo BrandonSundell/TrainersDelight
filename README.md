@@ -44,9 +44,9 @@ ASP.Net web application to provide a easy and efficient way for personal trainer
 ### Test table
 |testId|ReqID|Test process|current state|Time|
 |------|-----|---------|-------------|----|
-|1|1,10|From the main login page enter user cridentials(username, password) should allow the user to access the application|Not Tested|N/A|
-|2|2,3,4,6,8|In the application the user should be able to click the tabs on the left hand side and be able to interact and insert the data needed into that section of the app|Not Tested|N/A|
-|3|5,7,9|In the application the data the user enters into area gets inserted into the SQL database with a time stamp and displayed on the page|Not Tested|N/A|
+|1|1,10|From the main login page enter user cridentials(username, password) should allow the user to access the application|Tested|5/10/2021|
+|2|2,3,4,6,8|In the application the user should be able to click the tabs on the left hand side and be able to interact and insert the data needed into that section of the app|Tested|5/17/21|
+|3|5,7,9|In the application the data the user enters into area gets inserted into the SQL database with a time stamp and displayed on the page|Tested|5/17/2021|
 
 
 
