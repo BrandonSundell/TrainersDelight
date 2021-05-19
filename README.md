@@ -71,6 +71,6 @@ Migration and DataBase implementation along with scaffolded CRUD operations usin
 ![](Images/RunningAppCreate.jpg)
 ![](Images/RunningAppEdit.jpg)
 
-[Final Project Reveiw]()
+[Final Project Review](FinalProjectReview.md)
 
 [Top](#trainersdelight)
